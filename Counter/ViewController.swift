@@ -7,25 +7,25 @@
 
 import UIKit
 class ViewController: UIViewController {
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak private var numberLabel: UILabel!
     private var numberOfClicks = 0
     private var clickHistory: [String] = []
     private let date = Date()
     private let dateFormatter = DateFormatter()
-    @IBOutlet weak var counterHistoryTextView: UITextView!
+    @IBOutlet weak private var counterHistoryTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         counterHistoryTextView.text = "История изменений \n"
     }
-    @IBAction func resetСounterButton(_ sender: Any) {
+    @IBAction private func resetСounterButton(_ sender: Any) {
         resetCounter()
         counterHistory(action: formattedDate() + ":вы сбросили счетчик")
     }
     
-    @IBAction func plusValueButton(_ sender: Any) {
+    @IBAction private func plusValueButton(_ sender: Any) {
         addingCounter()
     }
-    @IBAction func minusValueButton(_ sender: Any) {
+    @IBAction private func minusValueButton(_ sender: Any) {
         decreaseCounter()
     }
     private func addingCounter() {
